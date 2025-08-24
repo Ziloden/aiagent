@@ -1,1 +1,2 @@
 MAX_CHARS = 10000
+PROCESS_TIMEOUT = 30 * 1000 # Milliseconds
