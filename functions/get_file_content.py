@@ -1,5 +1,6 @@
 import os
 from functions.config import MAX_CHARS
+from google.genai import types
 
 def get_file_content(working_directory, file_path):
     abs_working_dir = os.path.abspath(working_directory)
@@ -14,4 +15,17 @@ def get_file_content(working_directory, file_path):
             file_content_string += f'[...File "{file_path}" truncated at 10000 characters]'
     
     return file_content_string
-    
+
+schema_get_file_content = types.FunctionDeclaration(
+    name="get_file_content",
+    description="Gets the text content of the specified file, constrained to the working directory.",
+    parameters=types.Schema(
+        type=types.Type.OBJECT,
+        properties={
+            "file_path": types.Schema(
+                type=types.Type.STRING,
+                description="The file to get the text content of, relative to the working directory. This parameter must be provided.",
+            ),
+        },
+    ),
+)
