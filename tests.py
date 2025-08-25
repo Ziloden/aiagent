@@ -32,13 +32,13 @@ from functions.write_file import write_file
 # for test in file_write_tests:
 #     print(write_file(*test))
 
-file_execute_tests = [
-    ("calculator", "main.py"),
-    ("calculator", "main.py", ["3 + 5"]),
-    ("calculator", "tests.py"),
-    ("calculator", "../main.py"),
-    ("calculator", "nonexistent.py"),
-]
+# file_execute_tests = [
+#     ("calculator", "main.py"),
+#     ("calculator", "main.py", ["3 + 5"]),
+#     ("calculator", "tests.py"),
+#     ("calculator", "../main.py"),
+#     ("calculator", "nonexistent.py"),
+# ]
 
-for test in file_execute_tests:
-    print(run_python_file(*test))
+# for test in file_execute_tests:
+#     print(run_python_file(*test))
