@@ -2,6 +2,7 @@ import os
 import sys
 
 from dotenv import load_dotenv
+from functions.call_function import call_function
 from functions.get_file_content import schema_get_file_content
 from functions.get_files_info import schema_get_files_info
 from functions.run_python_file import schema_run_python_file
@@ -59,7 +60,12 @@ All paths you provide should be relative to the working directory. You do not ne
 
     if response.function_calls:
         for function_call in response.function_calls:
-            print(f"Calling function: {function_call.name}({function_call.args})")
+            function_call_result = call_function(function_call, verbose=verbose)
+            if function_call_result.parts[0].function_response.response:
+                if verbose:
+                    print(f"-> {function_call_result.parts[0].function_response.response}")
+            else:
+                raise Exception("No result response in function call result.")
     print(response.text)
     if verbose:
         print(f"User prompt: {user_prompt}")

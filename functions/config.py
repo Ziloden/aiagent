@@ -1,2 +1,4 @@
 MAX_CHARS = 10000
 PROCESS_TIMEOUT = 30 * 1000 # Milliseconds
+WORKING_DIRECTORY = 'calculator'
+WORKING_DIRECTORY_ARG = {'working_directory': WORKING_DIRECTORY}
