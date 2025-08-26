@@ -24,7 +24,7 @@ schema_get_file_content = types.FunctionDeclaration(
         properties={
             "file_path": types.Schema(
                 type=types.Type.STRING,
-                description="The file to get the text content of, relative to the working directory. This parameter must be provided.",
+                description="Required argument identifying the path to the file to get the text content of. It is relative to the working directory.",
             ),
         },
     ),
