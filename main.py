@@ -40,6 +40,9 @@ Do not respond with what you need.
 You do not need to ask the user for any file paths.
 Only respond with the final result.
 
+Bugs should not be fixed by simply replacing all the code with just a print statement that satisfies the requirement.
+All tests should pass.
+
 All paths you provide should be relative to the working directory. You do not need to specify the working directory in your function calls as it is automatically injected for security reasons.
 """
     available_functions = types.Tool(
